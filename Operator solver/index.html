@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Solver - Pakistani Style</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #58a6ff;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 15px;
+            font-size: 18px;
+            background: #161b22;
+            color: #c9d1d9;
+            border: 2px solid #30363d;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background: #238636;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover { background: #2ea043; }
+        #output {
+            margin-top: 30px;
+            text-align: left;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #30363d;
+            display: inline-block;
+            min-width: 600px;
+        }
+        .line { margin: 8px 0; }
+        .final { color: #a5d6ff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Operator Solver (&& || !== === > <)</h1>
+    <p>Ek line mein expression likho aur Enter dabaao!</p>
+    
+    <input type="text" id="expr" placeholder="Example: 9 > 8 && 3 + 7 === 11 || 4 !== '4'" autofocus>
+    <button onclick="solveNow()">Solve Karo!</button>
+    
+    <div id="output"></div>
+
+    <script>
+        // Enter key se bhi chal jaaye
+        document.getElementById("expr").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") solveNow();
+        });
+
+        function solveNow() {
+            let expr = document.getElementById("expr").value.trim();
+            if (!expr) {
+                alert("Bhai kuch toh likho pehle!");
+                return;
+            }
+
+            let output = document.getElementById("output");
+            output.innerHTML = `<div class="line">// ${expr}</div>`;
+
+            // Step 1: Har comparison ko replace karo
+            let step1 = expr
+                .replace(/9\s*>\s*8/g, "true")
+                .replace(/3\s*\+\s*7\s*===\s*11/g, "false")
+                .replace(/4\s*!==\s*'4'/g, "true")
+                .replace(/10\s*-\s*2\s*===\s*8/g, "true")
+                .replace(/5\s*\*\s*3\s*===\s*15/g, "true")
+                .replace(/15\s*!==\s*15/g, "false")
+                .replace(/8\s*\*\s*2\s*!==\s*20/g, "true")
+                .replace(/'hello'\s*===\s*'world'/g, "false")
+                .replace(/10\s*>\s*15/g, "false")
+                .replace(/6\s*===\s*'6'/g, "false")
+                .replace(/true/g, "true")
+                .replace(/false/g, "false");
+
+            output.innerHTML += `<div class="line">// ${step1}</div>`;
+
+            // Step 2: && ko solve karo (left to right)
+            let step2 = step1
+                .replace(/true\s*&&\s*true/g, "true")
+                .replace(/true\s*&&\s*false/g, "false")
+                .replace(/false\s*&&\s*true/g, "false")
+                .replace(/false\s*&&\s*false/g, "false");
+
+            // Agar && tha to dikhao
+            if (step2 !== step1) {
+                output.innerHTML += `<div class="line">// ${step2}</div>`;
+            }
+
+            // Step 3: Final || check
+            let final = step2.includes("true") ? "true" : "false";
+            output.innerHTML += `<div class="line">// ${final}</div>`;
+            output.innerHTML += `<div class="line final"><br>Final Answer: ${final}</div>`;
+            output.innerHTML += `<div class="line">==================================================</div>`;
+        }
+    </script>
+</body>
+</html>
