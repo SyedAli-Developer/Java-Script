@@ -8,6 +8,12 @@
 // 1. Create an array of fruits like ["apple", "banana", "cherry"] and use a loop to log each fruit
 // in the console.
 
+let fruits = ["apple" , "banana" , "cherry"]
+for(let i; i < fruits.length; i++)
+{
+    console.log(fruits[1])
+}
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 2. Given an array of colors ["red", "green", "blue"], use a loop to add all the color names to
