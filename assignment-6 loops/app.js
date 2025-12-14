@@ -8,11 +8,11 @@
 // 1. Create an array of fruits like ["apple", "banana", "cherry"] and use a loop to log each fruit
 // in the console.
 
-let fruits = ["apple" , "banana" , "cherry"]
-for(let i; i < fruits.length; i++)
-{
-    console.log(fruits[1])
-}
+// let fruits = ["apple" , "banana" , "cherry"]
+// for(let i; i < fruits.length; i++)
+// {
+//     console.log(fruits[1])
+// }
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -127,6 +127,16 @@ for(let i; i < fruits.length; i++)
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 25. Loop through an array [1, 3, 5, 7, 9] and count how many elements are greater than 4.
+
+// let array = [1, 3, 5, 7, 9];
+// let count = 0;
+// for (let i = 0; i < array.length; i++) {  
+//     if (array[i] > 4) {
+//         count++;  
+//     }
+// }
+// console.log("Array:", array);  
+// console.log("Number of elements greater than 4:", count);
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
