@@ -272,6 +272,16 @@
 
 // 23. Write a loop that calculates the average of numbers in an array [20, 30, 40, 50].
 
+// let num = [20, 30, 40, 50];
+// let total = 0;
+// for (let i = 0 ; i < num.length;i++)
+// {
+//     total += num[i]
+// }
+// console.log("The total is : "+total)
+// const average = total / num.length
+// console.log("The average is : "+average)
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 24. Given an array [2, 4, 6, 8, 10], use a loop to create a new array where each value is
