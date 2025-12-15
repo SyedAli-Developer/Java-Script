@@ -287,6 +287,15 @@
 // 24. Given an array [2, 4, 6, 8, 10], use a loop to create a new array where each value is
 // multiplied by 3.
 
+// let array =[2, 4, 6, 8, 10];
+// let array2 = [];
+// for(let i = 0; i <array.length;i++)
+// {
+//     array2.push(array[i]*3)
+// }
+// console.log("This is array 1: "+ array)
+// console.log("This is array 2: "+ array2)
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 25. Loop through an array [1, 3, 5, 7, 9] and count how many elements are greater than 4.
