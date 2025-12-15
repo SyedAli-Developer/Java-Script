@@ -300,15 +300,16 @@
 
 // 25. Loop through an array [1, 3, 5, 7, 9] and count how many elements are greater than 4.
 
-// let array = [1, 3, 5, 7, 9];
-// let count = 0;
-// for (let i = 0; i < array.length; i++) {
-//     if (array[i] > 4) {
-//         count++;
+// let array = [1, 3, 5, 7, 9 ,4 ,6,7,1,2]
+// let greater = 0;
+// for(let i = 0; i <array.length;i++)
+// {
+//     if(array[i]>4)
+//     {
+//         greater++;
 //     }
 // }
-// console.log("Array:", array);
-// console.log("Number of elements greater than 4:", count);
+// console.log(greater)
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
