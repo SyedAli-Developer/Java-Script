@@ -257,6 +257,17 @@
 
 // 22. Use a loop to count how many numbers in an array [3, 8, 6, 1, 9, 2] are even.
 
+// let number=[3, 8, 6, 1, 9, 2 , 1 , 4 , 6 , 5 ,12];
+// let even = [];
+// for(let i = 0 ; i < number.length; i++)
+// {
+//     if(number[i] % 2 == 0)
+//     {
+//         even.push(number[i])
+//     }
+// }
+// console.log("These number are even: ")
+// console.log(even)
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 23. Write a loop that calculates the average of numbers in an array [20, 30, 40, 50].
