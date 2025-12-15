@@ -242,6 +242,17 @@
 
 // 21. Create a loop that finds the largest number in an array [45, 67, 12, 89, 34].
 
+// let number = [45,67,12,89,34,100,101,50,60,102]
+// let high = 0;
+// for(let i = 0; i < number.length;i++)
+// {
+//     if(number[i]>high)
+//     {
+//         high = number[i]
+//     }
+// }
+// console.log("This number is the highest: "+ high)
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 22. Use a loop to count how many numbers in an array [3, 8, 6, 1, 9, 2] are even.
