@@ -218,6 +218,9 @@
 // 19. Create an array of subjects like ["Math", "Science", "English"], and use a loop to show
 // them in a paragraph with ID subjectsList.
 
+// let subjects = ["Math", "Science", "English"];
+// const show = document.querySelector("#para").textContent=subjects;
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 20. Write a loop that prints numbers from 10 down to 1 and shows the result inside a Given
