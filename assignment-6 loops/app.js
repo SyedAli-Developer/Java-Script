@@ -227,6 +227,17 @@
 // an array of numbers [5, 10, 15, 20], use a loop to calculate and print the sum of all
 // elements.
 
+// let number = [5, 10, 15, 20];
+// let sum = 0;
+// for(let i = 10; i >= 1; i--)
+// {
+//     console.log(i)
+// }
+// for(let i = 0; i < number.length; i++) {
+//     sum += number[i];
+// }
+// console.log("Sum of the array  =", sum);
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 21. Create a loop that finds the largest number in an array [45, 67, 12, 89, 34].
