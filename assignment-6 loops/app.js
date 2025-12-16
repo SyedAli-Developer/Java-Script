@@ -315,8 +315,7 @@
 
 // 26. Given an array [10, 15, 20, 25, 30], use a loop to add only the numbers divisible by 5.
 
-
-
+ 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 27. Write a loop that checks if a number 25 exists in the array [10, 20, 30, 40, 25].
