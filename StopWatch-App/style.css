@@ -1,0 +1,76 @@
+
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2d3436);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.stopwatch-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 350px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00d2ff;
+}
+
+.display {
+    font-family: 'Orbitron', sans-serif; /* Digital look font */
+    font-size: 3.5rem;
+    background: #000;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    color: #00ff88;
+    box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+ 
+
+/* Button Colors */
+.start { background-color: #00ff88; color: #1e1e2f; }
+.stop { background-color: #ff4757; color: white; }
+.reset { background-color: #f1c40f; color: #1e1e2f; }
+
+/* Hover Effects */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
