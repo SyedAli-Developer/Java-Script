@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trulia:Real Estate LIstings, Homes for sale, Housing Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Navbar started here  -->
+
+    <nav class="w-full fixed top-0 z-[3] bg-[white] flex justify-between p-[30px] h-[60px] ">
+
+        <div class="flex items-center gap-2.5">
+
+            <div class="w-[80px]">
+                <img class="w-[80px]"
+                    src="data:image/png;base64,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"
+                    alt="">
+            </div>
+            <ul class="flex items-center justify-evenly w-[250px] text-[16px] text-[#3b4144] font-semibold">
+                <li class="border-none px-[15px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#007882] hover:text-[white]">Buy</li>
+                <li class="border-none px-[15px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#007882] hover:text-[white]">Rent</li>
+                <li class="border-none px-[15px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#007882] hover:text-[white]">Mortage</li>
+            </ul>
+        </div>
+
+        <div class="flex items-center justify-evenly gap-3  text-[16px] text-[black] font-semibold">
+            <a href="" class="border-none px-[25px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#007882] hover:text-[white]">Saved Homes</a>
+            <a href="" class="border-none px-[25px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#007882] hover:text-[white]">Saved Searches</a>
+            <a href="" class="border-1 px-[25px] py-[8px] border-[#cdd1d4] rounded-[10px] hover:bg-[#5555551a]">Sign up or login</a>
+            <i class="cursor-pointer fa-solid fa-bars text-[#007882] font-bold text-[20px]"></i>
+        </div>
+    </nav>
+
+
+
+    <!-- main started here  -->
+    <main class="mt-15 w-full px-[30px] main-one flex justify-center items-center flex-col relative ">
+        <div
+            class="w-full bg-[url('https://www.trulia.com/images/app-shopping/homePage/extraLarge.webp')] bg-cover bg-center bg-no-repeat h-[75vh] rounded-2xl flex flex-col justify-center items-center text-[white]">
+
+            <h1 class="text-center text-5xl text-[white] m-[25px]">Discover a place <br>
+                you'll love to live
+            </h1>
+            <div class="bg-[#5555558a] flex gap-1 rounded-[10px]">
+                <a href="" class="bg-[white] text-[#007882] text-[20px] px-[15px] py-[5px] rounded-[10px] font-bold">Buy</a>
+                <a href=""
+                    class="hover:bg-[white] hover:text-[#007882] text-[20px] px-[15px] py-[5px] rounded-[10px] font-bold">Rent</a>
+                <a href=""
+                    class="hover:bg-[white] hover:text-[#007882] text-[20px] px-[15px] py-[5px] rounded-[10px] font-bold">Sold</a>
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="San Jose, CA" class="mt-2.5 border-none  focus:outline-3 focus:outline-[#007882] rounded-[7px] bg-[white] text-[black] w-[500px] h-[55px] px-[20px] text-[20px]">
+                <div class="bg-[#d93c23] text-[white] absolute bottom-0 right-0 w-[60px] h-[55px] flex justify-center items-center rounded-r-[7px] ">
+                    
+                    <i class="fa-solid fa-magnifying-glass text-[25px]"></i>
+        
+                </div>
+            </div>
+        </div>
+
+        <section class="main-two m-[80px]">
+            <div class="head">
+                <h2 class="text-center text-4xl m-[25px]">Explore homes on Trulia</h2>
+                <p class="text-center text-base m-[20px]">Take a deep dive and browse homes for sale, original
+                    neighborhood
+                    photos, resident <br>reviews and local insights to find what is right for you.</p>
+            </div>
+
+
+            <div class="carousel w-full">
+                <div id="slide1" class="carousel-item relative w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+                        class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" class="carousel-item relative w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+                        class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" class="carousel-item relative w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+                        class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" class="carousel-item relative w-full">
+                    <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+                        class="w-full" />
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="heading-svg m-[50px]">
+                <h3 class="text-center text-[40px] text-[rgb(59, 65, 68)]">See how Trulia can help</h3>
+            <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+      
+      <!-- Buy a home -->
+      <div class="flex flex-col items-center">
+        <img  src="https://www.trulia.com/images/icons/txl3/illustrations/BuyAHome.svg" alt="Buy a home icon" class="w-[128px] h-[128px] mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">Buy a home</h3>
+        <p class="text-gray-700 text-base leading-relaxed max-w-xs">
+          With over 1 million+ homes for sale available on the website, Trulia can match you with a house you will want to call home.
+        </p>
+        <button class="mt-8 px-8 py-3 bg-teal-600 text-white font-medium rounded-full hover:bg-teal-700 transition">
+          Find a home
+        </button>
+      </div>
+      
+      <!-- Rent a home -->
+      <div class="flex flex-col items-center">
+        <img src="https://www.trulia.com/images/icons/txl3/illustrations/RentAHome.svg" alt="Rent a home icon" class="w-[128px] h-[128px] mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">Rent a home</h3>
+        <p class="text-gray-700 text-base leading-relaxed max-w-xs">
+          With 35+ filters and custom keyword search, Trulia can help you easily find a home or apartment for rent that you'll love.
+        </p>
+        <button class="mt-8 px-8 py-3 bg-teal-600 text-white font-medium rounded-full hover:bg-teal-700 transition">
+          Find a rental
+        </button>
+      </div>
+      
+      <!-- See neighborhoods -->
+      <div class="flex flex-col items-center">
+        <img src="https://www.trulia.com/images/icons/txl3/illustrations/Neighborhoods.svg" alt="Neighborhood icon" class="w-[128px] h-[128px] mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">See neighborhoods</h3>
+        <p class="text-gray-700 text-base leading-relaxed max-w-xs">
+          With more neighborhood insights than any other real estate website, we've captured the color and diversity of communities.
+        </p>
+        <button class="mt-8 px-8 py-3 bg-teal-600 text-white font-medium rounded-full hover:bg-teal-700 transition">
+          Learn more
+        </button>
+      </div>
+      
+    </div>
+  </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+
+    <!-- main eneeded here  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/28bf8ecaf7.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
