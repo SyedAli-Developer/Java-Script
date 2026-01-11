@@ -1,4 +1,3 @@
-
 // _-_-______________________________________________________----_-_-_-____-__-----_______________________________________________________--
 
 //  JavaScript Loops Assignments
@@ -39,7 +38,7 @@
 // let num = 5;
 // while (num >= 1) {
 //   console.log(num);
-//   num--;  
+//   num--;
 // }
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
@@ -199,10 +198,9 @@
 //     }
 // }
 // const div = document.querySelector("#names")
-// div.textContent = "This numbers are greater than 75 = " + highscore  
+// div.textContent = "This numbers are greater than 75 = " + highscore
 // console.log(highscore)
 // console.log(count)
-
 
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
@@ -210,8 +208,9 @@
 // 18. Select an element with ID message and change its text to "Updated successfully" using
 // document.querySelector.
 
-// const text = document.querySelector("#para").textContent="Updated succesfully."
 
+
+// const text = document.querySelector("#para").textContent="Updated succesfully."
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -311,7 +310,6 @@
 // }
 // console.log(greater)
 
-
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 26. Given an array [10, 15, 20, 25, 30], use a loop to add only the numbers divisible by 5.
@@ -327,16 +325,27 @@
 
 // 27. Write a loop that checks if a number 25 exists in the array [10, 20, 30, 40, 25].
 
-let arry = [10, 20, 30, 40, 25]
-for (let i = 0 ; i < arry.length; i++){
-    
-}
+// let arry = [10, 20, 30, 40, 25]
+// for (let i = 0 ; i < arry.length; i++){
+//     if(arry[i] === 25){
+//         console.log("The " + 25 + " exists in arry");
+//     }
+// }
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 28. Given two arrays [1, 2, 3] and [4, 5, 6], use a loop to create a third array containing the
 // sum of corresponding elements.
 
-
+// let array1 = [1, 2, 3];
+// let array2 = [4, 5, 6];
+// let newarray = [];
+// for (let i = 0; i < 2; i++) {
+//   newarray.push(array1[i]);
+//   newarray.push(array2[i]);
+//   console.log(newarray[i])
+// }
+// console.log(newarray);
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -377,14 +386,35 @@ for (let i = 0 ; i < arry.length; i++){
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 37. Write a loop that checks whether all numbers in an array [2, 4, 6, 8] are even.
+let arry = [2,4,6,8]
+for (let i = 0; i < arry.length ; i++){
+    if(arry[i] % 2){
+        console.log("the arry is even");
+        
+    }
+    else{
+        console.log("the arry is not ");
+        
+    }
+}
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 38. Create a loop that counts how many numbers in [5, 10, 15, 20, 25] are greater than or
 // equal to the average of the array.
+// let arry = [5,10,15,20,25]
+
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 39. Given an array [2, 2, 2, 2, 2], use a loop to check whether all elements are equal.
+// let arry = [2, 2, 2, 2, 2];
+// for (let i = 0; i < arry.length; i++) {
+//   if (arry[i] === 2) {
+//     console.log("The arry is equal to " + 2);
+//   } else {
+//     console.log("the arry is not equal");
+//   }
+// }
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
