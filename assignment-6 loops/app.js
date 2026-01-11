@@ -59,6 +59,8 @@
 
 // 6. Change the text of a paragraph with ID status to "Loading..." using
 // document.querySelector.
+const pa = document.querySelector("#para");
+pa.innerHTML 
 
 // const paragraph = document.querySelector("#para").textContent = "Louding..."
 
@@ -166,6 +168,9 @@
 
 // 15. Use document.querySelector to select a heading with ID title and change its text to
 // "Welcome to JavaScript!".
+// const h1 = document.querySelector("#head");
+// h1.innerHTML = "Welcome to javascript"
+
 
 // const heading = document.querySelector("#para").textContent=("Well to jaca script")
 
@@ -404,20 +409,17 @@
 // equal to the average of the array.
 
 let arry = [5,10,15,20,25]
-// compute sum and average
 let sum = 0;
 for (let i = 0; i < arry.length; i++) {
   sum += arry[i];
 }
 let avg = sum / arry.length;
-
-// count numbers >= average
 let count = 0;
 for (let i = 0; i < arry.length; i++) {
   if (arry[i] >= avg) count++;
 }
 
-console.log("Average:", avg, "Count >= average:", count);
+console.log("Average:", avg, "numbera that greater than average is ", count);
 
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
