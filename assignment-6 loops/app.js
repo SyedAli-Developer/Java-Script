@@ -379,6 +379,7 @@
 // 35. Use a loop to remove all zeroes from an array [0, 1, 0, 3, 0, 5] and store the non-zero
 // elements in a new array.
 
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 36. Given an array [1, 2, 3, 4, 5, 6], use a loop to swap the first and last elements.
@@ -386,23 +387,37 @@
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 37. Write a loop that checks whether all numbers in an array [2, 4, 6, 8] are even.
-let arry = [2,4,6,8]
-for (let i = 0; i < arry.length ; i++){
-    if(arry[i] % 2){
-        console.log("the arry is even");
-        
-    }
-    else{
-        console.log("the arry is not ");
-        
-    }
-}
+
+// let arry = [2,4,6,8,3]
+// for (let i = 0; i < arry.length ; i++){
+//     if(arry[i] % 2 == 0){
+//         console.log("the "+arry[i]+" is even in the array");       
+//     }
+//     else{
+//         console.log("the "+arry[i]+" is not even");
+//     }
+// }
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 38. Create a loop that counts how many numbers in [5, 10, 15, 20, 25] are greater than or
 // equal to the average of the array.
-// let arry = [5,10,15,20,25]
+
+let arry = [5,10,15,20,25]
+// compute sum and average
+let sum = 0;
+for (let i = 0; i < arry.length; i++) {
+  sum += arry[i];
+}
+let avg = sum / arry.length;
+
+// count numbers >= average
+let count = 0;
+for (let i = 0; i < arry.length; i++) {
+  if (arry[i] >= avg) count++;
+}
+
+console.log("Average:", avg, "Count >= average:", count);
 
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
