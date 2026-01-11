@@ -392,19 +392,21 @@
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 33. Given an array [0, -1, -5, 6, 8, -3], count how many negative numbers are in the array.
+
 // let arraya = [0, -1, -5, 6, 8, -3]
 // let negetive= [];
 // let positive = [];
 // for (let i = 0; i < arraya.length ; i++){
 //     if (arraya[i] < 0){
-//         nnum.push(arraya[i])
+//         negetive.push(arraya[i])
 //     }
-//     else if(array[i] > 0)
-//     {
+//     else if(arraya[i] > 0){
+//         positive.push(arraya[i])
 //     }
 // }
-//     console.log("This number are not negative: "+ arraya);
-//     console.log(`This nuumber are negetive in array: ${nnum}`);
+//     console.log("This number are not negative: "+ positive);
+//     console.log(`This nuumber are negetive in array: ${negetive}`);
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 34. Loop through an array of numbers and create a new array that only contains odd
