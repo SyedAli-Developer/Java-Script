@@ -60,7 +60,7 @@
 // 6. Change the text of a paragraph with ID status to "Loading..." using
 // document.querySelector.
 const pa = document.querySelector("#para");
-pa.innerHTML 
+pa.innerHTML = "Loading..."
 
 // const paragraph = document.querySelector("#para").textContent = "Louding..."
 
@@ -410,11 +410,13 @@ pa.innerHTML
 
 let arry = [5,10,15,20,25]
 let sum = 0;
+let avg = sum / arry.length;
+let count = 0;
+
 for (let i = 0; i < arry.length; i++) {
   sum += arry[i];
 }
-let avg = sum / arry.length;
-let count = 0;
+
 for (let i = 0; i < arry.length; i++) {
   if (arry[i] >= avg) count++;
 }
