@@ -378,8 +378,9 @@
 
 // 34. Loop through an array of numbers and create a new array that only contains odd
 // numbers.
-let arra = []
-for(let)
+
+let arra = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+for (let i = 0 ; i < arra.length )
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -390,6 +391,9 @@ for(let)
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 36. Given an array [1, 2, 3, 4, 5, 6], use a loop to swap the first and last elements.
+
+
+
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -410,23 +414,18 @@ for(let)
 // 38. Create a loop that counts how many numbers in [5, 10, 15, 20, 25] are greater than or
 // equal to the average of the array.
 
-let arry = [5,10,15,20,25]
-// compute sum and average
-let sum = 0;
-
-
-for (let i = 0; i < arry.length; i++) {
-  sum += arry[i];
-}
-let avg = sum / arry.length;
-
-// count numbers >= average
-let count = 0;
-for (let i = 0; i < arry.length; i++) {
-  if (arry[i] >= avg) count++;
-}
-
-console.log("Average:", avg, "Count >= average:", count);
+// let arry = [5,10,15,20,25]
+// let sum = 0;
+// for (let i = 0; i < arry.length; i++) {
+//   sum += arry[i];
+// }
+// let avg = sum / arry.length;
+// let count = 0;
+// for (let i = 0; i < arry.length; i++) {
+//   if (arry[i] >= avg) count++;
+// }
+// console.log("Average:", avg);
+// console.log("Numbers that are greater than Average:" , count)
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
