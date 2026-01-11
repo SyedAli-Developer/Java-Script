@@ -59,8 +59,8 @@
 
 // 6. Change the text of a paragraph with ID status to "Loading..." using
 // document.querySelector.
-const pa = document.querySelector("#para");
-pa.innerHTML = "Loading..."
+// const pa = document.querySelector("#para");
+// pa.innerHTML = "Loading..."
 
 // const paragraph = document.querySelector("#para").textContent = "Louding..."
 
@@ -378,6 +378,8 @@ pa.innerHTML = "Loading..."
 
 // 34. Loop through an array of numbers and create a new array that only contains odd
 // numbers.
+let arra = []
+for(let)
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -409,20 +411,22 @@ pa.innerHTML = "Loading..."
 // equal to the average of the array.
 
 let arry = [5,10,15,20,25]
+// compute sum and average
 let sum = 0;
-let avg = sum / arry.length;
-let count = 0;
+
 
 for (let i = 0; i < arry.length; i++) {
   sum += arry[i];
 }
+let avg = sum / arry.length;
 
+// count numbers >= average
+let count = 0;
 for (let i = 0; i < arry.length; i++) {
   if (arry[i] >= avg) count++;
 }
 
-console.log("Average:", avg, "numbera that greater than average is ", count);
-
+console.log("Average:", avg, "Count >= average:", count);
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
