@@ -328,7 +328,9 @@
 // 27. Write a loop that checks if a number 25 exists in the array [10, 20, 30, 40, 25].
 
 let arry = [10, 20, 30, 40, 25]
-for (let i = 0 ; i < arr)
+for (let i = 0 ; i < arry.length; i++){
+    
+}
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 28. Given two arrays [1, 2, 3] and [4, 5, 6], use a loop to create a third array containing the
