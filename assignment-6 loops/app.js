@@ -361,9 +361,28 @@
 // 30. Given an array [1, 2, 3, 4, 5], reverse the array manually using a loop (don’t use
 // .reverse()).
 
+// let array = [1, 2, 3, 4, 5];
+// const out = [];
+// for (let i = array.length - 1; i >= 0; i--) {
+//   out.push(array[i]);
+// }
+// console.log(out);
+
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 31. Write a loop that finds and prints all the prime numbers between 1 and 50.
+// for (let num = 2; num <= 50; num++) {
+//   let isPrime = true;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       isPrime = false;
+//       break; 
+//     }
+//   }
+//   if (isPrime) {
+//     console.log(num);
+//   }
+// }
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
@@ -373,27 +392,71 @@
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 33. Given an array [0, -1, -5, 6, 8, -3], count how many negative numbers are in the array.
-
+// let arraya = [0, -1, -5, 6, 8, -3]
+// let negetive= [];
+// let positive = [];
+// for (let i = 0; i < arraya.length ; i++){
+//     if (arraya[i] < 0){
+//         nnum.push(arraya[i])
+//     }
+//     else if(array[i] > 0)
+//     {
+//     }
+// }
+//     console.log("This number are not negative: "+ arraya);
+//     console.log(`This nuumber are negetive in array: ${nnum}`);
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 34. Loop through an array of numbers and create a new array that only contains odd
 // numbers.
 
-let arra = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-for (let i = 0 ; i < arra.length )
+// let arra = [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// let odd = []
+// let even = []
+// for (let i = 0 ; i < arra.length ; i++){
+//     if (arra[i] % 2 == 1){
+//         odd.push(arra[i])
+//     }
+//     else{
+//         even.push(arra[i])
+//     }
+// }
+// console.log(odd)
+// console.log(even)
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 35. Use a loop to remove all zeroes from an array [0, 1, 0, 3, 0, 5] and store the non-zero
 // elements in a new array.
 
+// let arraay = [0, 1, 0, 3, 0, 5]
+// let zero = [] ;
+// let number = [];
+// for(let i = 0 ; i < arraay.length; i++ ){
+//     if(arraay[i] != 0 ){
+//         number.push(arraay[i])
+//     }
+//     else{
+//         zero.push(arraay[i])
+//     }
+// }
+// console.log(number)
+// console.log(zero)
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
 // 36. Given an array [1, 2, 3, 4, 5, 6], use a loop to swap the first and last elements.
 
+// let arr = [1,2,3,4,5,6];
+// for (let i = 0; i < arr.length; i++) {
+//   if (i === 0) {
+//     let temp = arr[i];
+//     arr[i] = arr[arr.length - 1];
+//     arr[arr.length - 1] = temp;
+//   }
+// }
 
-
+// console.log(arr);
 
 // _-_-_-_---__--_-_--_-_-_---__-_--_--_---_------_------_---_-____----_-_-_-____-__-----____---_--_------_____-__-_--_-___--___--___------_____----__--
 
