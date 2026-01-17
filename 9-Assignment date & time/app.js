@@ -9,18 +9,9 @@
 // -------------------------------------------------------------------------------------
 
 // 2. Elapsed Time in Minutes
-// Given two timestamps, calculate how many minutes have passed between them.   
+// Given two timestamps, calculate how many minutes have passed between them.
 
- function minutesBetween(startTime, endTime) {
-    const start = new Date(startTime);
-    const end   = new Date(endTime);
-    const diffMs = end - start; 
-    const diffMinutes = Math.floor(diffMs / (1000 * 60));
-    
-}
-console.log(minutesBetween("2025-01-17 10:30", "2025-01-17 11:45"));     
 
-// good hogaya
 
 // -------------------------------------------------------------------------------------
 
@@ -36,7 +27,6 @@ console.log(minutesBetween("2025-01-17 10:30", "2025-01-17 11:45"));
 // 5. Get Last Day of Current Month
 // Write a function that returns the last date (e.g., 31, 30, or 28/29) of the current month.
 // -------------------------------------------------------------------------------------
-
 // 6. Human-Friendly "Time Ago"
 // Create a function that returns strings like:
 // ○ "Just now"
