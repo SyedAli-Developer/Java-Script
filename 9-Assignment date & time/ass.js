@@ -16,7 +16,8 @@ function time(startime,endtime){
     const calculate = (start - end) ;   
     return 
 }
-consloe.log(time()) 
+console.log();
+ 
 
 
 // -------------------------------------------------------------------------------------
