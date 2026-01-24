@@ -1,3 +1,14 @@
+
+
+// Template literals 
+
+// const username = "mabdullah";
+// const age = 22;
+
+// console.log("username is " + username + " user age is " + age);
+// console.log(`username is ${username} user age is ${age}`);
+
+
 /*----------------------------------------------------------------*/
 
 // ----- Default parameters
