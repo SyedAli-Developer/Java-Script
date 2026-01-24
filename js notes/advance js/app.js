@@ -1,26 +1,55 @@
 /*----------------------------------------------------------------*/
 
-// ---------------- Destructuring 
+// ---------------- Destructuring-------
 
+//-----Objects method me 
+
+/*----// Example no.1
+let user = {
+  username: "Ali",
+  age: 10,
+  isLoggedIn: false,
+};
+console.log(
+  `User Name: "${user.username}" Age: "${user.age}" Is Logged In: "${user.isLoggedIn}" `,
+);
+*/
+
+/*----// Example no.2
 let user = {
     username: "Ali",
     age: 10,
     isLoggedIn: false
 }
+let {username , age , isLoggedIn} = user
+console.log(`User Name: "${username}" Age: "${age}" Is Logged In: "${isLoggedIn}" `);
+*/
 
-let {username , isLoggedIn} = user
-console.log(username , isLoggedIn);
+//-----Array method me
 
-const fruits = ['apple' , 'banana' , 'orange' , 'kiwi'];
-
-const [f1 , , , f2] = fruits
-
+/*----//Example no.1
+const fruits = ["apple", "banana", "orange", "kiwi"];
+const [f1, f2, f3, f4] = fruits;
+console.log(f1, f2, f3, f4);
 console.log(f2);
+console.log(f4, f2);
+ */
 
+/*----//Example no.2
+const fruits = ["apple", "banana", "orange", "kiwi"];
+const [f1, f2] = fruits;
+console.log(f2);
+*/
+
+/*----//Example no.3
+const fruits = ["apple", "banana", "orange", "kiwi"];
+const [f1, , f5 ] = fruits;
+console.log(f5);
+*/
 
 /*----------------------------------------------------------------*/
 
-// ------ Template literals-------------- 
+// ------ Template literals--------------
 
 /*Template literals se murad wo kam jo ap String Concatenation ke zariye karte hay yani 
 usi code ko backtik ke andar karna Template literals kehte hay.
