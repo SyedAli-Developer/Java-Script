@@ -1,13 +1,40 @@
+/*----------------------------------------------------------------*/
+
+// ---------------- Destructuring 
+
+let user = {
+    username: "Ali",
+    age: 10,
+    isLoggedIn: false
+}
+
+let {username , isLoggedIn} = user
+console.log(username , isLoggedIn);
+
+const fruits = ['apple' , 'banana' , 'orange' , 'kiwi'];
+
+const [f1 , , , f2] = fruits
+
+console.log(f2);
 
 
-// Template literals 
+/*----------------------------------------------------------------*/
 
-// const username = "mabdullah";
-// const age = 22;
+// ------ Template literals-------------- 
 
-// console.log("username is " + username + " user age is " + age);
-// console.log(`username is ${username} user age is ${age}`);
+/*Template literals se murad wo kam jo ap String Concatenation ke zariye karte hay yani 
+usi code ko backtik ke andar karna Template literals kehte hay.
+Note: 
+String Concatenation: using this ( "" + "" )
+("User Name: " + username + " Age: " + age) <-- this is String concatenation
 
+Template literals: using (`variableName ${}   `)
+-----(`User Name: ${username} Age: ${age}`) <-- this is Template literals. */
+
+// let username = "Syed Ali";
+// let age = 12;
+// console.log("User Name: " + username + " Age: " + age)
+// console.log(`User Name: ${username} Age: ${age}`)
 
 /*----------------------------------------------------------------*/
 
