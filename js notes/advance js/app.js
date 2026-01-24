@@ -1,126 +1,179 @@
-/*----------------------------------------------------------------*/
+// ────────────────────────────────────────────────
+//  Destructuring (Object aur Array se value nikaalna)
+// ────────────────────────────────────────────────
 
-// ---------------- Destructuring-------
+/*
+  Destructuring ka matlab hai: 
+  Ek object ya array se directly values nikaal kar alag-alag variables mein store kar dena.
+  
+  Pehle tareeka (purana style):
+  let name = user.username;
+  let age  = user.age;
 
-//-----Objects method me 
+  Naya tareeka (destructuring):
+  let {username, age} = user;
 
-/*----// Example no.1
-let user = {
-  username: "Ali",
-  age: 10,
-  isLoggedIn: false,
-};
-console.log(
-  `User Name: "${user.username}" Age: "${user.age}" Is Logged In: "${user.isLoggedIn}" `,
-);
+  Faida: Code chhota, clean aur readable ho jata hai.
 */
 
-/*----// Example no.2
-let user = {
-    username: "Ali",
-    age: 10,
-    isLoggedIn: false
-}
-let {username , age , isLoggedIn} = user
-console.log(`User Name: "${username}" Age: "${age}" Is Logged In: "${isLoggedIn}" `);
+// ────────────────────────────────────────────────
+//  1. Object Destructuring
+// ────────────────────────────────────────────────
+
+// /* Example 1 – Purana tareeka (bina destructuring) */
+// let user1 = {
+//   username: "Ali",
+//   age: 10,
+//   isLoggedIn: false
+// };
+
+// console.log(
+//   `User Name: "${user1.username}" Age: "${user1.age}" Is Logged In: "${user1.isLoggedIn}"`
+// );
+// // Output: User Name: "Ali" Age: "10" Is Logged In: "false"
+
+
+// /* Example 2 – Destructuring ke saath (modern tareeka) */
+// let user2 = {
+//   username: "Ali",
+//   age: 10,
+//   isLoggedIn: false
+// };
+
+// let { username, age, isLoggedIn } = user2;
+
+// console.log(`User Name: "${username}" Age: "${age}" Is Logged In: "${isLoggedIn}"`);
+// Output: User Name: "Ali" Age: "10" Is Logged In: "false"
+
+
+/* Note:
+   - Variable names object ke keys se match karni chahiye
+   - Order matter nahi karta
+   - Agar koi key nahi milti to value undefined aayegi
 */
 
-//-----Array method me
+// // Bonus: Different name rakhna chahte ho to colon (:) use karo
+// let { username: naam, age: umar } = user2;
+// console.log(naam, umar);   // Output: Ali 10
 
-/*----//Example no.1
-const fruits = ["apple", "banana", "orange", "kiwi"];
-const [f1, f2, f3, f4] = fruits;
-console.log(f1, f2, f3, f4);
-console.log(f2);
-console.log(f4, f2);
- */
 
-/*----//Example no.2
-const fruits = ["apple", "banana", "orange", "kiwi"];
-const [f1, f2] = fruits;
-console.log(f2);
+// ────────────────────────────────────────────────
+//  2. Array Destructuring
+// ────────────────────────────────────────────────
+
+/* Example 1 – Poori list nikaalna */
+// const fruits = ["apple", "banana", "orange", "kiwi"];
+
+// const [f1, f2, f3, f4] = fruits;
+
+// console.log(f1, f2, f3, f4);   // apple banana orange kiwi
+// console.log(f2);               // banana
+// console.log(f4, f2);           // kiwi banana
+
+
+// /* Example 2 – Sirf pehle 2 chahiye */
+// const [first, second] = fruits;
+// console.log(second);           // banana
+
+
+// /* Example 3 – Skip karna (comma se chhod do) */
+// const [a, , c] = fruits;       // 2nd position skip
+// console.log(c);                // orange   (kiwi nahi aayega)
+
+// /* Example 4 – Last item chahiye to rest use karo */
+// const [firstFruit, ...baakiSab] = fruits;
+// console.log(firstFruit);       // apple
+// console.log(baakiSab);         // ["banana", "orange", "kiwi"]
+
+
+/* Note:
+   - Array mein order bohot matter karta hai
+   - Comma (,) se aap values skip kar sakte ho
+   - ... (rest) se baaki saare items ek array mein mil jaate hain
 */
 
-/*----//Example no.3
-const fruits = ["apple", "banana", "orange", "kiwi"];
-const [f1, , f5 ] = fruits;
-console.log(f5);
-*/
 
-/*----------------------------------------------------------------*/
+// ────────────────────────────────────────────────
+//  Real-life useful examples
+// ────────────────────────────────────────────────
+ 
+// ────────────────────────────────────────────────
+//  Template Literals (Backtick Strings)
+// ────────────────────────────────────────────────
 
-// ------ Template literals--------------
+/*
+  Pehle tareeka (old school):
+  "User: " + username + " Age: " + age
 
-/*Template literals se murad wo kam jo ap String Concatenation ke zariye karte hay yani 
-usi code ko backtik ke andar karna Template literals kehte hay.
-Note: 
-String Concatenation: using this ( "" + "" )
-("User Name: " + username + " Age: " + age) <-- this is String concatenation
-
-Template literals: using (`variableName ${}   `)
------(`User Name: ${username} Age: ${age}`) <-- this is Template literals. */
-
-// let username = "Syed Ali";
-// let age = 12;
-// console.log("User Name: " + username + " Age: " + age)
-// console.log(`User Name: ${username} Age: ${age}`)
-
-/*----------------------------------------------------------------*/
-
-// ----- Default parameters
-/* default parameter ka matlab hay agar argument empty hay to jo default me value parameter keliye set kia ta wo value aye ga take function run ho gaye.
-is ko ham is tarah se use kar sakte hay:
-function functionName(user = 'Khan Baba'){}
-*/
-
-// function fun(user = 'Khan Baba', age = 23) {
-//     console.log(`Hello ${user} your age is ${age}.`);
-// }
-// fun()
-
-/*----------------------------------------------------------------*/
-
-// ----- Rest parameter
-
-/*rest parameter = "..." is ko parameter se pehle likte hay.
-is ko ham is liye use karte hay ta ke agar perameter ek hay aur arguments multiple hay pir rest parameter ko use kar ke tamam arguments ki data ko ham array ki form me le sakte hay.
-Note: agar rest parameter ko ham use nakare kisi multiple arguments me to multiple arguments mese sirf pehla argument ki data run hoga baqi tamam run nahi hoga.*/
-
-// function fun(...user) {
-//     console.log(user);
-// }
-// fun("ALi" , "Abass" , "Ahsan")
-
-// function fun(user) {
-//     console.log(user);
-// }
-// fun("muhammed" , "ahmad" ,"zaki")
-
-/*----------------------------------------------------------------*/
-
-// ----- Spread Operator
-/*niche diye gaye 3 examples ko review karo ye in sab me 3 array ko ek array me data store karne ka tariqa hay lekin example no.3 spread operator ke zariye se banaya gaya newarray hay us me kia hota hay ke ap her wo variable jo ap add karna chahte ho us ke name se pehle "..." lagate hay pir wo concat method jesa output deta hay. 
-Note: is ko is tarah lik te hay.
-newarr = [...num1, ...num2, ...num3]
+  Naya tareeka (modern & readable):
+  `User: ${username} Age: ${age}`
 */
 
 /*
-let num1 = [1, 2, 3];
-let num2 = [4, 5, 6];
-let num3 = [7, 8, 9];
-let newarr = [];
+let username = "Syed Ali";
+let age = 12;
+console.log("User Name: " + username + " Age: " + age);
+// Output: User Name: Syed Ali Age: 12
+console.log(`User Name: ${username} Age: ${age}`);
+// Output: User Name: Syed Ali Age: 12
+// Bonus: expressions bhi chalte hain
+console.log(`Next year age will be ${age + 1}`);
+// Output: Next year age will be 13
+//  */
 
-example 1:
-newarr = num1.concat(num2.concat(num3))
-console.log(newarr)
+// ────────────────────────────────────────────────
+//  Default Parameters
+// ────────────────────────────────────────────────
 
-example 2:
-newarr = [num1, num2, num3];
-console.log(newarr)
-
-example 3:
-newarr = [...num1, ...num2, ...num3];
-console.log(newarr);
+/*function greet(name = "Bhai", age = 25) {
+  console.log(`Hello ${name}, aapki umar ${age} hai.`);
+}
+greet(); // Hello Bhai, aapki umar 25 hai.
+greet("Ahmed"); // Hello Ahmed, aapki umar 25 hai.
+greet("Zain", 19); // Hello Zain, aapki umar 19 hai.
 */
 
-/*----------------------------------------------------------------*/
+// ────────────────────────────────────────────────
+//  Rest Parameter (...)
+// ────────────────────────────────────────────────
+
+/*
+function printFriends(...friends) {
+  console.log("Mere dost:", friends);
+  console.log("Total dost:", friends.length);
+}
+printFriends("Ali", "Abbas", "Ahsan", "Zaki");
+// Output:
+// Mere dost: ["Ali", "Abbas", "Ahsan", "Zaki"]
+// Total dost: 4
+*/
+
+/*
+// Agar rest na use karo to sirf pehla argument aata hai
+function wrongWay(name) {
+  console.log(name);
+}
+wrongWay("Ali", "Abbas", "Zain"); // sirf "Ali" print hoga
+*/
+
+// ────────────────────────────────────────────────
+//  Spread Operator (...)
+// ────────────────────────────────────────────────
+
+/*
+const frontend = ["HTML", "CSS", "JS"];
+const backend = ["Node.js", "Express"];
+const database = ["MongoDB", "PostgreSQL"];
+
+console.log("Example 1 (concat):", frontend.concat(backend, database));
+console.log("Example 2 (nested):", [frontend, backend, database]);
+
+// Sabse clean tareeka (spread)
+const fullStack = [...frontend, ...backend, ...database, "Git"];
+console.log("Full Stack:", fullStack);
+
+// Bonus: object mein bhi spread hota hai
+const user = { name: "SyedAli", city: "Quetta" };
+const updatedUser = { ...user, age: 25, isCoder: true };
+console.log(updatedUser);
+ */
