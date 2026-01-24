@@ -31,6 +31,7 @@ Note: agar rest parameter ko ham use nakare kisi multiple arguments me to multip
 
 /*----------------------------------------------------------------*/
 
+
 // ----- Spread Operator
 /*niche diye gaye 3 examples ko review karo ye in sab me 3 array ko ek array me data store karne ka tariqa hay lekin example no.3 spread operator ke zariye se banaya gaya newarray hay us me kia hota hay ke ap her wo variable jo ap add karna chahte ho us ke name se pehle "..." lagate hay pir wo concat method jesa output deta hay. 
 Note: is ko is tarah lik te hay.
