@@ -1,3 +1,58 @@
+// Variable Scoping 
+// Closure 
+// lexical scoping 
+// IIFE 
+// Object Methods (keys,values,freez,entries) 
+// Exponentiation Operator 
+// Optional chaining 
+// Destructuring 
+// Template literals 
+// Destructuring 
+// Default parameters 
+// Rest parameter 
+// Spread Operator 
+// Arrow functions 
+// Enhanced object literals 
+// Iterators & For..of 
+// Map 
+// Array methods 
+// Higher-order function 
+// CallBack 
+// Promises 
+// Ternary Operator 
+// modules // firebase ma prhainga
+
+
+// ────────────────────────────────────────────────
+//  Variable Scoping ()
+// ────────────────────────────────────────────────
+
+
+// ────────────────────────────────────────────────
+//  lexical scoping   ()
+// ────────────────────────────────────────────────
+
+
+// ────────────────────────────────────────────────
+//  Closure ()
+// ────────────────────────────────────────────────
+
+// ────────────────────────────────────────────────
+//  IIFE ()
+// ────────────────────────────────────────────────
+
+// ────────────────────────────────────────────────
+//  Objects Methods (Keys, Values, freaze, entries)
+// ────────────────────────────────────────────────
+
+// ────────────────────────────────────────────────
+//  Exponentiation Operator ()
+// ────────────────────────────────────────────────
+
+// ────────────────────────────────────────────────
+//  Optional chaining ()
+// ────────────────────────────────────────────────
+
 // ────────────────────────────────────────────────
 //  Destructuring (Object aur Array se value nikaalna)
 // ────────────────────────────────────────────────
