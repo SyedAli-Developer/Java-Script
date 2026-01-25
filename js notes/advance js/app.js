@@ -1,32 +1,82 @@
-// Variable Scoping 
-// Closure 
-// lexical scoping 
-// IIFE 
-// Object Methods (keys,values,freez,entries) 
-// Exponentiation Operator 
-// Optional chaining 
-// Destructuring 
-// Template literals 
-// Destructuring 
-// Default parameters 
-// Rest parameter 
-// Spread Operator 
-// Arrow functions 
-// Enhanced object literals 
-// Iterators & For..of 
-// Map 
-// Array methods 
-// Higher-order function 
-// CallBack 
-// Promises 
-// Ternary Operator 
-// modules // firebase ma prhainga
 
+// ────────────────────────────────────────────────
+//  Advance JAVASCRIPT
+// ────────────────────────────────────────────────
+/*
+  Wellcome to Advance js..
+  yaha per jitna topics lika hay ap in ko Advance js me padenge.
+*/
+/*
+1.Variable Scoping 
+2.Closure 
+3.lexical scoping 
+4.IIFE 
+5.Object Methods (keys,values,freez,entries) 
+6.Exponentiation Operator 
+7.Optional chaining 
+8.Destructuring 
+9.Template literals 
+10.Destructuring 
+11.Default parameters 
+12.Rest parameter 
+13.Spread Operator 
+14.Arrow functions 
+15.Enhanced object literals 
+16.Iterators & For..of 
+17.Map 
+18.Array methods 
+19.Higher-order function 
+20.CallBack 
+21.Promises 
+22.Ternary Operator 
+23.modules // firebase ma prhaing3
+*/
 
 // ────────────────────────────────────────────────
 //  Variable Scoping ()
 // ────────────────────────────────────────────────
 
+/*We have two types of Variable 
+1. Global Variable --------------------
+2. Local Variable --------------------
+
+Global Variable wo hota hay jo funtion , if else , 
+Condition se bahar banta hay Aur ye js ke har jage per call kar sakte hay.
+
+Local Variable wo hota hay jo function , if else , 
+Condition ke andar banta hay Aur ye variable us Block se bahar call nahi ho sakta. 
+
+*/
+/*
+let parentAge = 20; // <-- This is Global Variable.
+
+function greating() {
+  let childAge = 5; // <-- This is Local Variable.
+  console.log(parentAge);
+  console.log(childAge);
+}
+greating()
+
+// Note: kisi bhi local variable ko ek Block se dusre Block me call nahi kar sakte.
+
+function Hello() {
+  console.log(parentAge) // <-- Ap yaha per dek sakte hay ke Global variable yaha per call hota hay 
+  console.log(childAge); // <-- Lekin yaha per ap dek sakte hay ke yaha per error ata hay. Yani Yaha per call nahi ho sakta
+}
+Hello()
+
+// Note: var and let Variable difference.
+// Is me ap dek sakte hay ke var ko johe condition
+//  se bahar call kar sakte hay lekin let ko nahi kar sakte.
+
+if(true){
+  var a = 10; // Condition scope
+  let b = 20; // block scope
+}
+
+console.log(b);
+// Note: ye method sirf Condition me kam karta hay function me nahi 
+*/
 
 // ────────────────────────────────────────────────
 //  lexical scoping   ()
@@ -38,21 +88,75 @@
 // ────────────────────────────────────────────────
 
 // ────────────────────────────────────────────────
-//  IIFE ()
+//  IIFE (ye ek self-executing function)
 // ────────────────────────────────────────────────
+
+/*
+  ye ek isa function hay jis ko call karne ki zaroorat nahi ye khod khood ko call karega.
+  is ko banane kelie normal function ko ek braket () ke andar banate hay aur is braket () ki bad bi ek dusra braket banate hay.
+  like this ()().
+  niche example ko deke.
+*/
+
+/*
+// Example: 
+(function game() {
+  console.log("I am a self excuting function");
+})();
+*/
 
 // ────────────────────────────────────────────────
 //  Objects Methods (Keys, Values, freaze, entries)
 // ────────────────────────────────────────────────
+/*
+keys()	Sirf names nikalta hai.	['name', 'age']
+values()	Sirf data nikalta hai.	['Zeeshan', 25]
+entries()	Dono ka pair banata hai.	[['name', 'Zeeshan'], ...]
+freeze()	Object ko lock kar deta hai.	Object read-only ho jata hai.
+*/
 
+
+const user = { name: "Zeeshan", age: 25, city: "Karachi" };
+
+console.log(Object.keys(user));
 // ────────────────────────────────────────────────
 //  Exponentiation Operator ()
 // ────────────────────────────────────────────────
+/*
+
+Exponentiation operator ko ham number ki power dene me is temal karte hay.
+is ka sign ye hay " ** " 'do star' 
+*/
+
+/*
+// Example: ham agar kahe 4 ki power 2 yani ye 4x4x4x4 = 16
+console.log(4**2) // Output = 16
+//Yani 4 ki power 2 ko ham js me 4**2 likte hay dono ki answer 16 hoga.
+*/
 
 // ────────────────────────────────────────────────
 //  Optional chaining ()
 // ────────────────────────────────────────────────
+/*
+javaScript me agar kisi jaga me value ho ya na ho to is error se bajne keliya ham optional chaining ki madad se agar value ho to os ko dega agar na ho to undefine dega
+*/
 
+// const user = {
+//     profile: {
+//         settings: {
+//             theme: {
+//                 color: "dark"
+//             }
+//         }
+//     }
+// };
+// console.log(user.profile?.settings?.theme?.color?.name)
+
+const num = {
+  Name : "Abbas",
+  age : {}
+}
+console.log(num.age?.addres)
 // ────────────────────────────────────────────────
 //  Destructuring (Object aur Array se value nikaalna)
 // ────────────────────────────────────────────────
