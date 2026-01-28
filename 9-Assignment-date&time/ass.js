@@ -1,137 +1,215 @@
-// JavaScript Date & Time
-// =====================================================================================
-
+// ==================================================================
 // 1. Custom Date Formatter
-// Write a function that takes a Date object and returns a formatted string like:
-// "Saturday, 9 August 2025".
-
-
-// -------------------------------------------------------------------------------------
-
-// 2. Elapsed Time in Minutes
-// Given two timestamps, calculate how many minutes have passed between them.   
-
-//  function minutesBetween(startTime, endTime) {
-//     const start = new Date(startTime);
-//     const end = new Date(endTime);
-//     const calc = end - start; 
-//     const time = Math.floor(calc / (1000 * 60));
-//     return time;
-// }
-// console.log(minutesBetween("2025-01-17 10:30", "2025-01-17 11:45"));     
-
-// -------------------------------------------------------------------------------------
-
-// 3. Age Calculator from Full Birthdate
-// Create a function that accepts a full birthdate (YYYY-MM-DD) and calculates the age in
-// years, months, and days.
-// let yy = prompt("Birth year:");
-// let mm = prompt("Birth month (1-12):");
-// let dd = prompt("Birth day:");
-// let birth = new Date(yy, mm-1, dd);
-// let now   = new Date();
-// let y = now.getFullYear() - birth.getFullYear();
-// let m = now.getMonth() - birth.getMonth();
-// let d = now.getDate() - birth.getDate();
-
-// if (d < 0) {
-//     m--;
-//     d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-// }
-// if (m < 0) {
-//     y--;
-//     m += 12;
-// }
-// alert(`${y} saal, ${m} mahina, ${d} din`);
-// -------------------------------------------------------------------------------------
-
-// 4. Get First Day of Current Month
-// Return the date of the first day of the current month.
-// const first = new Date();
-// first.setDate(1);
-// first.setHours(0, 0, 0, 0);
-// console.log(first);   
-
-// -------------------------------------------------------------------------------------
-
-// 5. Get Last Day of Current Month
-// Write a function that returns the last date (e.g., 31, 30, or 28/29) of the current month.
-// function lastday() {
-//     return new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
-// }
-// console.log(lastday());  
-// -------------------------------------------------------------------------------------
-
-
-// 6. Human-Friendly "Time Ago"
-// Create a function that returns strings like:
-// ○ "Just now"
-// ○ "5 minutes ago"
-// ○ "2 hours ago"
-// ○ "1 day ago" based on a past timestamp.
-
-function timeAgoSimple(ts) {
-  const sec = Math.floor((Date.now() - new Date(ts)) / 1000);
-
-  if (sec < 60)    return "Just now";
-  if (sec < 3600)  return Math.floor(sec/60) + " min ago";
-  if (sec < 86400) return Math.floor(sec/3600) + " hr ago";
-  return Math.floor(sec/86400) + " day ago";
+// Returns: "Saturday, 9 August 2025"
+// ==================================================================
+function formatDate(date) {
+    const options = { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    };
+    return date.toLocaleDateString('en-GB', options);
 }
-// -------------------------------------------------------------------------------------
-// 7. Countdown Timer
-// Create a simple countdown function to a future date (e.g., New Year), showing days,
-// hours, minutes, seconds remaining.
-// -------------------------------------------------------------------------------------
+
+// Example:
+// console.log(formatDate(new Date()));          // e.g. Saturday, 28 January 2026
+
+
+// ==================================================================
+// 2. Elapsed Time in Minutes Between Two Dates
+// ==================================================================
+function getMinutesBetween(startTime, endTime) {
+    const start = new Date(startTime);
+    const end   = new Date(endTime);
+    
+    if (isNaN(start) || isNaN(end)) return "Invalid date";
+    
+    const diffMs = end - start;
+    const minutes = Math.floor(diffMs / (1000 * 60));
+    
+    return minutes;
+}
+
+// Example:
+// console.log(getMinutesBetween("2023-10-01T10:00:00", "2023-10-01T12:30:00")); // 150
+
+
+// ==================================================================
+// 3. Age Calculator (years, months, days)
+// ==================================================================
+function calculateAge(birthDay, birthMonth, birthYear) {
+    const today = new Date();
+    const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
+    
+    if (isNaN(birthDate.getTime())) return "Invalid birth date";
+    
+    let years  = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days   = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return `${years} years, ${months} months, ${days} days`;
+}
+
+// Example:
+// console.log(calculateAge(10, 8, 2007));
+
+
+// ==================================================================
+// 4. First Day of Current Month
+// ==================================================================
+function getFirstDayOfCurrentMonth() {
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth(), 1).getDate();
+}
+
+// console.log(getFirstDayOfCurrentMonth());
+
+
+// ==================================================================
+// 5. Last Day of Current Month
+// ==================================================================
+function getLastDayOfCurrentMonth() {
+    const today = new Date();
+    return new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+}
+
+// console.log(getLastDayOfCurrentMonth());
+
+
+// ==================================================================
+// 6. Human-Friendly "Time Ago"
+// ==================================================================
+function timeAgo(pastTimestamp) {
+    const now = Date.now();
+    const past = new Date(pastTimestamp).getTime();
+    const seconds = Math.floor((now - past) / 1000);
+
+    if (seconds < 45)               return "Just now";
+    if (seconds < 90)               return "1 minute ago";
+    
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 45)               return `${minutes} minutes ago`;
+    
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24)                 return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+    
+    const days = Math.floor(hours / 24);
+    if (days < 30)                  return `${days} day${days === 1 ? '' : 's'} ago`;
+    
+    return new Date(past).toLocaleDateString('en-GB');
+}
+
+// Example:
+// console.log(timeAgo("2026-01-20T10:00:00"));
+
+
+// ==================================================================
 // 8. Time Difference in Hours and Minutes
-// Given two dates, return the difference in hours and minutes, like: "3 hours 25
-// minutes".
+// ==================================================================
+function getTimeDifference(start, end) {
+    const diffMs = new Date(end) - new Date(start);
+    if (isNaN(diffMs)) return "Invalid dates";
+    
+    const totalMinutes = Math.floor(diffMs / 60000);
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
 
-// -------------------------------------------------------------------------------------
+    let result = '';
+    if (hours > 0)   result += `${hours} hour${hours > 1 ? 's' : ''} `;
+    if (minutes > 0) result += `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    
+    return result.trim() || '0 minutes';
+}
+
+// Example:
+// console.log(getTimeDifference("2026-01-25 10:00:00", "2026-01-25 13:25:00"));
+
+
+// ==================================================================
 // 9. Check if Date is Weekend or Weekday
-// Write a function that returns "Weekend" or "Weekday" based on a given date string.
-// -------------------------------------------------------------------------------------
-// 10. Compare Birthdays
-// Ask for two people’s birthdates and return who is older and by how many years/days.
-// -------------------------------------------------------------------------------------
-// 11. Recurring Alarm Checker
-// Given a day and time (e.g., "Monday 08:00"), check if the current date/time matches
-// that schedule.
-// -------------------------------------------------------------------------------------
+// ==================================================================
+function getDayType(dateString) {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return "Invalid date";
+    
+    const day = date.getDay();
+    return (day === 0 || day === 6) ? "Weekend" : "Weekday";
+}
+
+// console.log(getDayType("2026-01-25"));  // Sunday → Weekend
+
+
+// ==================================================================
 // 12. Date Validator
-// Write a function that checks whether a given date string is a valid date (e.g., using
-// Date.parse() or new Date()).
-// -------------------------------------------------------------------------------------
-// 13. Custom Relative Date Formatter
-// Given a timestamp, format it as:
-// ● "Today at 3:45 PM"
-// ● "Yesterday at 11:00 AM"
-// ● "4 days ago"
-// depending on how recent it is.
-// -------------------------------------------------------------------------------------
-// 14. Generate Dates for the Next 7 Days
-// Return an array of dates (in DD-MM-YYYY format) for the next 7 days from today.
-// -------------------------------------------------------------------------------------
-// 15. Time Slot Generator
-// Create a function that generates available 30-minute time slots between 9 AM to 5 PM
-// for a specific date.
-// -------------------------------------------------------------------------------------
-// 16. Monthly Calendar Dates
-// Return an array of all dates in the current month (e.g., ['01-08-2025',
-// '02-08-2025', ...]).
-// -------------------------------------------------------------------------------------
-// 17. Convert UTC Date to Local Time
-// Given a UTC date string, convert it to local date/time format.
-// -------------------------------------------------------------------------------------
-// 18. Measure Function Execution Time
-// Use Date.now() to measure how long a loop/function takes to execute.
+// ==================================================================
+function isValidDate(dateString) {
+    const date = new Date(dateString);
+    return !isNaN(date.getTime());
+}
 
-// -------------------------------------------------------------------------------------
-// 19. Format Date as ISO String Without Time
-// Format the current date as YYYY-MM-DD (without time), using a custom formatter.
-// -------------------------------------------------------------------------------------
-// 20. Get the Number of Days in Any Month
-// Write a function that takes a month and year, and returns how many days are in that
-// month (handle leap years too).
-// --------------------------------The-End----------------------------------------------
+// console.log(isValidDate("2026-01-25"));     // true
+// console.log(isValidDate("2026-13-45"));     // false
 
+
+// ==================================================================
+// 14. Generate Dates for the Next 7 Days (DD-MM-YYYY)
+// ==================================================================
+function getNextSevenDays() {
+    const dates = [];
+    const today = new Date();
+
+    for (let i = 1; i <= 7; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() + i);
+
+        const day   = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year  = d.getFullYear();
+
+        dates.push(`${day}-${month}-${year}`);
+    }
+    return dates;
+}
+
+// console.log(getNextSevenDays());
+
+
+// ==================================================================
+// 19. Current Date as ISO String (YYYY-MM-DD)
+// ==================================================================
+function getCurrentISODate() {
+    const d = new Date();
+    const year  = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day   = String(d.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
+}
+
+// console.log(getCurrentISODate());   // e.g. 2026-01-28
+
+
+// ==================================================================
+// 20. Get Number of Days in Any Month (handles leap years)
+// ==================================================================
+function getDaysInMonth(month, year) {
+    // month: 1–12
+    if (month < 1 || month > 12) return "Invalid month";
+    
+    return new Date(year, month, 0).getDate();
+}
+
+// Examples:
+// console.log(getDaysInMonth(2, 2024));   // 29  (leap year)
+// console.log(getDaysInMonth(2, 2025));   // 28
+// console.log(getDaysInMonth(4, 2026));   // 30
