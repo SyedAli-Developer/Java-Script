@@ -1,17 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Events Assignment - SyedAli</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 { text-align: center; color: #2c3e50; }
+    h2 { color: #2980b9; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    button, input, select, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    .preview-box {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #ccc;
+      margin: 15px auto;
+      border-radius: 8px;
+    }
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 18px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
-    
-    <h1>Hello Events in javascript.</h1>
 
+  <h1>JavaScript DOM Events Assignment</h1>
 
+  <!-- 1. Click to Change Background -->
+  <section id="task1">
+    <h2>1. Click to Change Background</h2>
+    <button id="bgBtn">Change Background Color</button>
+  </section>
 
-    <script src="./app.js"></script>
+  <!-- 2. Toggle Light/Dark Mode -->
+  <section id="task2">
+    <h2>2. Toggle Light / Dark Mode</h2>
+    <button id="themeBtn">Switch to Dark Mode</button>
+  </section>
+
+  <!-- 3. Hide Element on Click -->
+  <section id="task3">
+    <h2>3. Hide Element on Click</h2>
+    <button id="hideBtn" style="padding: 20px 40px; font-size: 1.4rem; background: tomato; color: white; border: none; cursor: pointer;">
+      Click to Hide Me
+    </button>
+  </section>
+
+  <!-- 4. Counter -->
+  <section id="task4">
+    <h2>4. Counter with + / - Buttons</h2>
+    <button id="decBtn">-</button>
+    <span id="counterDisplay" style="font-size: 3rem; margin: 0 20px;">0</span>
+    <button id="incBtn">+</button>
+  </section>
+
+  <!-- 5. Disable Button After Click -->
+  <section id="task5">
+    <h2>5. Disable Button After One Click</h2>
+    <button id="onceBtn">Click me (only once!)</button>
+  </section>
+
+  <!-- 6. Live Character Count -->
+  <section id="task6">
+    <h2>6. Live Character Count</h2>
+    <textarea id="charCountArea" rows="4" cols="50" placeholder="Type here..."></textarea>
+    <p>Characters: <strong id="charCount">0</strong></p>
+  </section>
+
+  <!-- 7. Password Strength -->
+  <section id="task7">
+    <h2>7. Password Strength Checker</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password" style="width: 300px;">
+    <span id="strengthText" style="margin-left: 15px; font-weight: bold;"></span>
+  </section>
+
+  <!-- Continue adding other tasks similarly... -->
+
+  <button id="topBtn">↑ Top</button>
+
+  <script src="./app.js"></script>
 </body>
 </html>
