@@ -8,28 +8,28 @@
 */
 /*
 1.Variable Scoping 
-2.Closure 
-3.lexical scoping 
+2.Closure x
+3.lexical scoping x
 4.IIFE 
-5.Object Methods (keys,values,freez,entries) 
+5.Object Methods (keys,values,freez,entries)  
 6.Exponentiation Operator 
 7.Optional chaining 
 8.Destructuring 
-9.Template literals 
-10.Destructuring 
-11.Default parameters 
-12.Rest parameter 
-13.Spread Operator 
-14.Arrow functions 
-15.Enhanced object literals 
-16.Iterators & For..of 
-17.Map 
-18.Array methods 
-19.Higher-order function 
-20.CallBack 
-21.Promises 
-22.Ternary Operator 
-23.modules // firebase ma prhaing3
+9.Template literals x
+10.Destructuring x
+11.Default parameters x
+12.Rest parameter x
+13.Spread Operator x
+14.Arrow functions x
+15.Enhanced object literals x
+16.Iterators & For..of x
+17.Map x
+18.Array methods x
+19.Higher-order function x
+20.CallBack x
+21.Promises x
+22.Ternary Operator x
+23.modules // firebase ma prhaing3 x
 */
 
 // ────────────────────────────────────────────────
@@ -109,16 +109,23 @@ console.log(b);
 //  Objects Methods (Keys, Values, freaze, entries)
 // ────────────────────────────────────────────────
 /*
-keys()	Sirf names nikalta hai.	['name', 'age']
-values()	Sirf data nikalta hai.	['Zeeshan', 25]
-entries()	Dono ka pair banata hai.	[['name', 'Zeeshan'], ...]
-freeze()	Object ko lock kar deta hai.	Object read-only ho jata hai.
+object.keys()	<-- is ko use karke ap object ke andar jitne bi keys hau un ka name le sakte ho. for example:	['name', 'age']
+object.values()	<-- is ko use karke ap object ke andar jitne bi keys ka value hu un ko ap le sakte hay. for example	['ali', 20 , 'Quetta']
+object.entries()	<-- is ko use kar ke ap object ke andar se keys aur us keys ka value dono ko ek array me le sakte hay. for example: [['name', 'ali'], ['age', '20'], ['city', 'Quetta']]
+object.freeze()	<-- is ko ap use karke kisi bi object ko ap lock karsakte ho take us me update na ho.	Object read-only ho jata hai.
+
 */
 
-
-const user = { name: "Zeeshan", age: 25, city: "Karachi" };
+/*
+const user = { name: "Ali", age: 20, city: "Quetta"};
 
 console.log(Object.keys(user));
+console.log(Object.values(user));
+console.log(Object.entries(user));
+console.log(Object.freeze(user));
+user.age = 25; // ye update nahi hoga kyun ke object freeze ho chuka hay.
+console.log(user);
+*/
 // ────────────────────────────────────────────────
 //  Exponentiation Operator ()
 // ────────────────────────────────────────────────
@@ -138,25 +145,24 @@ console.log(4**2) // Output = 16
 //  Optional chaining ()
 // ────────────────────────────────────────────────
 /*
-javaScript me agar kisi jaga me value ho ya na ho to is error se bajne keliya ham optional chaining ki madad se agar value ho to os ko dega agar na ho to undefine dega
+// purana tension wala scene
+const data = { user: { profile: { name: "Ali" } } };
+
+console.log(data.user.profile.name);          // "Ali" — theek
+console.log(data.user.settings.theme);        // 💥 ERROR! undefined pe crash
+
+// ab hero aa gaya → optional chaining (?.)
+console.log(data?.user?.profile?.name);       // "Ali"
+console.log(data?.user?.settings?.theme);     // undefined (no crash, no tension)
+console.log(data?.user?.wife?.name);          // undefined 😂 chill bro
+
+// function call bhi safe
+user?.greet?.();          // agar greet function hai to chalao, warna ignore
+
+// array style bhi
+console.log(post?.comments?.[0]?.text);       // pehla comment safe access
 */
 
-// const user = {
-//     profile: {
-//         settings: {
-//             theme: {
-//                 color: "dark"
-//             }
-//         }
-//     }
-// };
-// console.log(user.profile?.settings?.theme?.color?.name)
-
-const num = {
-  Name : "Abbas",
-  age : {}
-}
-console.log(num.age?.addres)
 // ────────────────────────────────────────────────
 //  Destructuring (Object aur Array se value nikaalna)
 // ────────────────────────────────────────────────
@@ -251,11 +257,6 @@ console.log(num.age?.addres)
    - ... (rest) se baaki saare items ek array mein mil jaate hain
 */
 
-
-// ────────────────────────────────────────────────
-//  Real-life useful examples
-// ────────────────────────────────────────────────
- 
 // ────────────────────────────────────────────────
 //  Template Literals (Backtick Strings)
 // ────────────────────────────────────────────────
