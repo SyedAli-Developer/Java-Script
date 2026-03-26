@@ -57,6 +57,7 @@ function greating() {
   console.log(childAge);
 }
 greating()
+greating()
 
 // Note: kisi bhi local variable ko ek Block se dusre Block me call nahi kar sakte.
 
