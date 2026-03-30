@@ -59,6 +59,7 @@ function greating() {
 greating()
 greating()
 
+
 // Note: kisi bhi local variable ko ek Block se dusre Block me call nahi kar sakte.
 
 function Hello() {
