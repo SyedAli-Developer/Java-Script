@@ -343,3 +343,6 @@
 // else{
 //     alert("Please switch to Chrome")
 // }
+
+
+true == false ? console.log("If condition run hogaya") : console.log("Else condition run hogaya")
