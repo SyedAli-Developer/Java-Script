@@ -4,9 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(150, 150, 150);
+        }
+        body>h1{
+            margin: 20px;
+            font-size: 3rem;
+            /* color: white; */
+        }
+        .box{
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            height: 600px;
+            border-radius: 20px;
+            /* background-color: aqua; */
+        }
+        .computer{
+            width: 100%;
+            height: 40%;
+            /* background-color: red; */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .user{
+            /* padding: 50px 0px; */
+            text-align: center;
+            height: 50%;
+            /* background-color: yellow; */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+        .btns{
+            
+            height: 50%;
+            /* background-color: yellow; */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .user button {
+    background-color: #222; /* Pure black se thora behtar dark grey */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Thora sa kam roundness professional lagti hai */
+    width: 120px; /* Width thori barha di balance ke liye */
+    height: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer; /* Mouse le jane par hand icon aaye */
+    transition: all 0.3s ease; /* Saare effects ko smooth banane ke liye */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Halka sa shadow */
+}
+
+/* Hover Effect: Jab mouse button par jaye */
+.user button:hover {
+    background-color: #444; /* Rang thora light ho jaye */
+    transform: translateY(-2px); /* Button thora sa uper uthe */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow barh jaye */
+}
+
+/* Click Effect: Jab button par click karein */
+.user button:active {
+    transform: translateY(0); /* Button wapas apni jagah aa jaye */
+    transform: scale(0.95); /* Button thora sa dab jaye (press effect) */
+    background-color: #111; /* Click par rang thora dark ho jaye */
+}
+        #WDL{
+            /* background-color: blue; */
+            color: black;
+            font-size: 2rem;
+            
+            
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Wellcome to RPS Game</h1>
+    <div class="box">
+        <div class="computer">
+            <div class="result">
+                <h1>Computer</h1>
+                <h1 id="cOut"></h1>
+            </div>
+        </div>
+        <div id="WDL"></div>
+        <div class="user">
+            <div class="result">
+                <h1>You</h1>
+                <h1 id="uOut"></h1>
+            </div>
+            <div class="btns">
+                
+            <button onclick="input('Paper')" id="paper">Paper</button>
+            <button onclick="input('Scissor')" id="scissor">Scissor</button>
+            <button onclick="input('Stone')" id="stone">Stone</button>
+            </div>
+            <button id="Start" onclick="Game()">Start</button>
+        </div>
+        
+    </div>
     <script src="./app.js"></script>
 </body>
 </html>
