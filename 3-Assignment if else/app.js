@@ -343,9 +343,3 @@
 // else{
 //     alert("Please switch to Chrome")
 // }
-
-let score = +prompt("Enter Your number");
-
-let grade = score >= 90 ? 'A' : score >= 80 ? 'B' : score >= 70 ? 'C' : score >= 60 ? 'Pass' : 'Fail because you get'
-
-console.log(grade , score)
