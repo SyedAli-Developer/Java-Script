@@ -190,3 +190,11 @@
 //     console.log("Please Login First")
 // }
 
+
+function abcd(val) {
+    val()
+}
+
+abcd(function ghi() {
+    console.log('hello guys')
+})
