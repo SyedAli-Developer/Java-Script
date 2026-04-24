@@ -1,24 +1,13 @@
-let btn = document.getElementById('likeBtn')
-let count = document.getElementById('count')
+let country = document.querySelectorAll('.country')
+// for(let i = 0; i < country.length; i++)
+// {
+//     console.log(country[i].textContent)
+// }
+// country.forEach(function (value) {
+//     console.log(value.textContent)
+    
+// })
 
-let liked = false;
-let likecount = 10;
-
-count.textContent = likecount;
-
-btn.addEventListener('click' , ()=>{
-    liked = !liked
-
-    if(liked)
-    {
-        likecount++;
-        btn.classList.add("red")
-        btn.textContent = 'Liked'
-    }
-    else{
-        likecount--;
-        btn.classList.remove('red')
-        btn.textContent = 'Like'
-    }
-    count.textContent = likecount;
-})
+country.forEach(element => {
+    console.log(element.textContent)
+});
