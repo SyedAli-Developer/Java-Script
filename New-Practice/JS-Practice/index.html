@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice</title>
+    <style>
+        #LikeDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 2rem;
+        }
+        .btn{
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+        .red{
+            background-color: red;
+            color: black;
+
+        }
+
+    </style>
 </head>
 <body>
-    <button id="my-btn" onclick="changeBackground()">Click Me</button>
-    <p>Mera naam syed Ali hay.</p>
-    <button id="paraBtn">Change Text</button>
+
+    <div id="LikeDiv">
+        <button id="likeBtn" class="btn">Like</button>
+        <div id="count"></div>
+    </div>
 
     <script src="./app.js"></script>
 </body>

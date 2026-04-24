@@ -1,11 +1,24 @@
-let btn = document.getElementById('my-btn')
-let body = document.querySelector("body")
-let parabtn = document.getElementById('paraBtn')
-let paragraph = document.querySelector('p')
+let btn = document.getElementById('likeBtn')
+let count = document.getElementById('count')
 
-function changeBackground() {
-    body.style.backgroundColor = "Blue"
-}
-parabtn.addEventListener('click' , ()=>{
-    paragraph.textContent = "Main Javascript seekh raha hoon"
+let liked = false;
+let likecount = 10;
+
+count.textContent = likecount;
+
+btn.addEventListener('click' , ()=>{
+    liked = !liked
+
+    if(liked)
+    {
+        likecount++;
+        btn.classList.add("red")
+        btn.textContent = 'Liked'
+    }
+    else{
+        likecount--;
+        btn.classList.remove('red')
+        btn.textContent = 'Like'
+    }
+    count.textContent = likecount;
 })
