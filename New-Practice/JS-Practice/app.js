@@ -6,3 +6,5 @@ div.prepend(img)
 img.setAttribute('alt' , 'Image')
 img.classList.add('placeholder')
 console.log(div.innerHTML)
+
+
