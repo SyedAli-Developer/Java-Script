@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice</title>
     <style>
-        .placeholder{
+        .placeholder {
             width: 100px;
         }
-        .psudio{
+
+        .psudio {
             background-color: brown;
             color: white;
             transition-duration: 200ms;
             cursor: pointer;
         }
-        .psudio:hover{
+
+        .psudio:hover {
             background-color: red;
             color: black;
         }
-        .psome{
+
+        .psome {
             background-color: aquamarine;
             color: black;
             transition-duration: 200ms;
-            cursor: move;
+            cursor: text;
         }
-        .psome:hover{
+
+        .psome:hover {
             background-color: aqua;
             color: red;
         }
+
+        .box {
+            margin-left: 200px;
+            width: 300px;
+            height: 300px;
+            background-color: black;
+            color: white;
+            transition: transform 0.3s ease-out,
+                background-color 0.1s ease-in;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+        }
+
+        .boxi {
+            margin-left: 200px;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            color: white;
+            transition: transform 0.3s ease-out,
+                background-color 0.1s ease-in;
+
+        }
+
+        .boxi:hover {
+            transform: scale(1.1);
+
+        }
     </style>
 </head>
+
 <body>
 
 
@@ -40,4 +76,5 @@
 
     <script src="./app.js"></script>
 </body>
+
 </html>

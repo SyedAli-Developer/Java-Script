@@ -11,7 +11,7 @@
 let main = document.querySelector('body')
 
 let div = document.createElement('div')
-div.setAttribute('class' , 'gost')
+div.setAttribute('class', 'gost')
 
 let h1 = document.createElement('h1')
 h1.textContent = 'Hello dosto'
@@ -24,9 +24,23 @@ btn.textContent = 'Change'
 
 
 main.prepend(div)
-div.prepend(h1,  p , btn )
+div.prepend(h1, p, btn)
 
-btn.addEventListener('click' , ()=>{
-    p.classList = 'psudio'
+btn.addEventListener('click', () => {
+    if (p.classList.contains('psudio')) {
+        p.classList.remove('psudio')
+        p.classList.add('psome')
+    }
+    else {
+        p.classList.remove('psome')
+        p.classList.add("psudio")
+    }
+    if (div.classList.contains('box')) {
+        div.classList.remove('box')
+        div.classList.add('boxi')
+    } else {
+        div.classList.remove('boxi')
+        div.classList.add('box')
 
+    }
 })
