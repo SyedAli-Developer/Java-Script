@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Syed Ali | Frontend Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--bg2:#f9f9f7;--text:#111;--muted:#555;--lighter:#888;--border:#e5e5e5;--accent:#111;--tag-bg:#f1f1ef;--tag-text:#333;--green:#16a34a;--green-bg:#dcfce7}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;font-size:16px}
+a{color:inherit;text-decoration:none}
+html{scroll-behavior:smooth}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem}
+.nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:#eee}
+.nav-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.85rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+section{padding:5rem 5%}
+.container{max-width:1000px;margin:0 auto}
+
+/* HERO */
+#hero{padding:5rem 5% 4rem;border-bottom:1px solid var(--border)}
+.available-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:99px;margin-bottom:1.8rem;letter-spacing:.3px}
+.available-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-year{font-size:.8rem;color:var(--lighter);margin-bottom:.3rem}
+h1.hero-name{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:1.2rem;color:var(--text)}
+.hero-desc{font-size:1rem;color:var(--muted);max-width:580px;line-height:1.85;margin-bottom:1.8rem}
+.hero-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.stack-pill{background:var(--tag-bg);color:var(--tag-text);font-size:.78rem;padding:.3rem .75rem;border-radius:6px;font-weight:500}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-dark{background:var(--text);color:#fff;padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:500;transition:opacity .2s;border:none;cursor:pointer}
+.btn-dark:hover{opacity:.8}
+.btn-light{background:var(--tag-bg);color:var(--text);padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:500;transition:background .2s;border:none;cursor:pointer}
+.btn-light:hover{background:#e5e5e5}
+.social-row{display:flex;gap:.6rem;flex-wrap:wrap}
+.social-btn{display:inline-flex;align-items:center;gap:6px;background:var(--tag-bg);color:var(--muted);font-size:.78rem;padding:.35rem .85rem;border-radius:8px;transition:background .2s;border:1px solid var(--border)}
+.social-btn:hover{background:#e9e9e9;color:var(--text)}
+.social-btn svg{width:14px;height:14px;fill:currentColor}
+
+/* SECTION LABELS */
+.sec-label{font-size:.75rem;font-weight:600;color:var(--lighter);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.4rem}
+.sec-title{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;letter-spacing:-.5px;margin-bottom:.5rem}
+.sec-sub{font-size:.9rem;color:var(--muted);max-width:600px;line-height:1.8;margin-bottom:2.5rem}
+
+/* PROJECTS */
+#projects{background:var(--bg);border-bottom:1px solid var(--border)}
+.proj-grid{display:flex;flex-direction:column;gap:1.5rem}
+.proj-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.proj-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);border-color:#ccc}
+.proj-img{width:100%;height:190px;object-fit:cover;display:block}
+.proj-img-placeholder{width:100%;height:190px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:700;letter-spacing:-1px;color:rgba(255,255,255,0.5)}
+.proj-body{padding:1.5rem}
+.proj-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.proj-desc{font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.proj-tag{background:var(--tag-bg);color:var(--tag-text);font-size:.72rem;padding:.25rem .65rem;border-radius:6px;font-weight:500}
+.proj-links{display:flex;gap:.7rem}
+.proj-link{font-size:.8rem;font-weight:500;padding:.3rem .9rem;border-radius:7px;border:1px solid var(--border);color:var(--text);transition:background .2s}
+.proj-link:hover{background:var(--tag-bg)}
+.proj-link.dark{background:var(--text);color:#fff;border-color:var(--text)}
+.proj-link.dark:hover{opacity:.8}
+
+/* SKILLS */
+#skills{background:var(--bg2);border-bottom:1px solid var(--border)}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:.6rem}
+.skill-pill{background:var(--bg);border:1px solid var(--border);color:var(--text);font-size:.85rem;padding:.45rem 1rem;border-radius:8px;font-weight:500;transition:border-color .2s}
+.skill-pill:hover{border-color:#999}
+
+/* CONTACT */
+#contact{background:var(--bg);border-bottom:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+.contact-links{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem}
+.clink{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border:1px solid var(--border);border-radius:10px;font-size:.85rem;color:var(--text);transition:background .2s}
+.clink:hover{background:var(--bg2)}
+.clink-icon{width:36px;height:36px;border-radius:8px;background:var(--tag-bg);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.clink-info{display:flex;flex-direction:column}
+.clink-label{font-size:.7rem;color:var(--lighter);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.clink-val{font-size:.85rem;color:var(--text)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.finput{width:100%;border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;font-size:.9rem;font-family:inherit;color:var(--text);background:var(--bg);outline:none;transition:border-color .2s}
+.finput:focus{border-color:#999}
+textarea.finput{min-height:120px;resize:vertical}
+.finput::placeholder{color:#aaa}
+
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5%}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+.footer-logo{font-weight:700;font-size:.95rem}
+.footer-text{font-size:.8rem;color:var(--lighter)}
+
+@media(max-width:700px){
+  .contact-grid{grid-template-columns:1fr}
+  .nav-links{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-avatar">SA</div>
+      Syed Ali
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="available-badge">
+      <span class="available-dot"></span>
+      Available for Opportunities
+    </div>
+    <p class="hero-year">My Portfolio · 2025</p>
+    <h1 class="hero-name">Syed Ali</h1>
+    <p class="hero-desc">
+      I'm a Frontend Developer with 2+ years of experience building responsive, modern web interfaces. Currently studying Web Development at SMIT, Karachi. I love turning designs into clean, fast, and user-friendly experiences.
+    </p>
+    <div class="hero-stack">
+      <span class="stack-pill">HTML</span>
+      <span class="stack-pill">CSS</span>
+      <span class="stack-pill">JavaScript</span>
+      <span class="stack-pill">React.js</span>
+      <span class="stack-pill">Tailwind CSS</span>
+      <span class="stack-pill">Bootstrap</span>
+      <span class="stack-pill">GSAP</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-dark">View Projects</a>
+      <a href="#contact" class="btn-light">Contact Me</a>
+    </div>
+    <div class="social-row">
+      <a href="https://github.com/syedali-developer" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/syedali-software-engineer/" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.55V9H3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:Syedali.h.b.g.626@gmail.com" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email
+      </a>
+      <a href="https://wa.me/923451120866" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15s-.77.96-.95 1.16c-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52s-.67-1.62-.92-2.21c-.24-.58-.48-.5-.67-.51H6.6c-.2 0-.52.07-.79.37-.27.3-1.02.99-1.02 2.42s1.05 2.81 1.2 3c.14.2 2.06 3.15 4.99 4.42.7.3 1.24.48 1.66.61.7.22 1.33.19 1.84.12.56-.08 1.73-.71 1.98-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.57-.34z"/><path d="M12 2a10 10 0 0 0-8.72 14.88L2 22l5.26-1.26A10 10 0 1 0 12 2zm0 18.18a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.12.75.78-3.05-.2-.31A8.18 8.18 0 1 1 12 20.18z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="sec-label">Selected Work</p>
+    <h2 class="sec-title">Featured Projects</h2>
+    <p class="sec-sub">Projects I've built while learning and growing as a Frontend Developer. Each one helped me sharpen my skills and think more like an engineer.</p>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-img-placeholder" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          🛒 ShopEase
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">ShopEase — E-Commerce UI</h3>
+          <p class="proj-desc">A fully responsive e-commerce frontend with product listings, cart functionality, category filters, and a clean checkout flow. Built with React and styled using Tailwind CSS for a modern shopping experience.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React.js</span>
+            <span class="proj-tag">Tailwind CSS</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">Context API</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="proj-link dark">Live Demo</a>
+            <a href="https://github.com/syedali-developer" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-placeholder" style="background:linear-gradient(135deg,#0f3460,#533483)">
+          🌤 WeatherNow
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">WeatherNow — Weather App</h3>
+          <p class="proj-desc">A real-time weather application that fetches live data from the OpenWeather API. Features city search, 5-day forecast, animated weather icons, and dynamic backgrounds based on weather conditions.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React.js</span>
+            <span class="proj-tag">OpenWeather API</span>
+            <span class="proj-tag">CSS</span>
+            <span class="proj-tag">Axios</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="proj-link dark">Live Demo</a>
+            <a href="https://github.com/syedali-developer" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-placeholder" style="background:linear-gradient(135deg,#134e4a,#065f46)">
+          ✅ TaskFlow
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">TaskFlow — Task Manager App</h3>
+          <p class="proj-desc">A productivity app for managing daily tasks with drag-and-drop Kanban board, priority labels, due dates, and local storage persistence. Smooth animations powered by GSAP for a polished feel.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React.js</span>
+            <span class="proj-tag">GSAP</span>
+            <span class="proj-tag">Tailwind CSS</span>
+            <span class="proj-tag">LocalStorage</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="proj-link dark">Live Demo</a>
+            <a href="https://github.com/syedali-developer" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="sec-label">Tech Stack</p>
+    <h2 class="sec-title">My Skills</h2>
+    <p class="sec-sub">Languages, frameworks, and tools I work with. Most of these I've learned by building real projects.</p>
+    <div class="skills-wrap">
+      <span class="skill-pill">HTML5</span>
+      <span class="skill-pill">CSS3</span>
+      <span class="skill-pill">JavaScript (ES6+)</span>
+      <span class="skill-pill">React.js</span>
+      <span class="skill-pill">Tailwind CSS</span>
+      <span class="skill-pill">Bootstrap</span>
+      <span class="skill-pill">GSAP</span>
+      <span class="skill-pill">Git & GitHub</span>
+      <span class="skill-pill">Responsive Design</span>
+      <span class="skill-pill">Figma (Basic)</span>
+      <span class="skill-pill">REST APIs</span>
+      <span class="skill-pill">npm / Vite</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="sec-label">Let's Talk</p>
+    <h2 class="sec-title">Get In Touch</h2>
+    <p class="sec-sub">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-links">
+          <a href="mailto:Syedali.h.b.g.626@gmail.com" class="clink">
+            <div class="clink-icon">✉️</div>
+            <div class="clink-info">
+              <span class="clink-label">Email</span>
+              <span class="clink-val">Syedali.h.b.g.626@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://wa.me/923451120866" target="_blank" class="clink">
+            <div class="clink-icon">💬</div>
+            <div class="clink-info">
+              <span class="clink-label">WhatsApp</span>
+              <span class="clink-val">+92 345 1120866</span>
+            </div>
+          </a>
+          <a href="https://github.com/syedali-developer" target="_blank" class="clink">
+            <div class="clink-icon">⌨️</div>
+            <div class="clink-info">
+              <span class="clink-label">GitHub</span>
+              <span class="clink-val">github.com/syedali-developer</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/syedali-software-engineer/" target="_blank" class="clink">
+            <div class="clink-icon">💼</div>
+            <div class="clink-info">
+              <span class="clink-label">LinkedIn</span>
+              <span class="clink-val">syedali-software-engineer</span>
+            </div>
+          </a>
+          <div class="clink">
+            <div class="clink-icon">📍</div>
+            <div class="clink-info">
+              <span class="clink-label">Location</span>
+              <span class="clink-val">Hazara Town, Quetta, Balochistan, Pakistan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input class="finput" type="text" placeholder="Your Name"/>
+        <input class="finput" type="email" placeholder="Your Email"/>
+        <input class="finput" type="text" placeholder="Subject"/>
+        <textarea class="finput" placeholder="Your message..."></textarea>
+        <button class="btn-dark" style="width:100%;padding:.75rem;font-size:.9rem;border-radius:8px;cursor:pointer">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner" style="max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div>
+      <p style="font-weight:700;font-size:.95rem">Syed Ali</p>
+      <p style="font-size:.8rem;color:#888">Frontend Developer · SMIT Student</p>
+    </div>
+    <p style="font-size:.8rem;color:#aaa">© 2025 Syed Ali. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
